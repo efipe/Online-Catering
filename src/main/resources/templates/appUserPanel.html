@@ -1,0 +1,31 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:include="template :: scripts_header"/>
+    <meta charset="UTF-8">
+    <title>Customer Panel Page</title>
+</head>
+<body>
+
+
+<!--i18n-->
+<th:block th:include="template :: navigator"/>
+<th:block th:include="template :: message"/>
+
+
+<main role="main" class="container">
+    <h1 class="table-head-title">Customer Panel Page</h1>
+
+    <div class="row">
+        <a class="offset-8 col-2 btn btn-outline-primary" th:href="@{/appUserPage/updateUser}"> Update customer details</a>
+        <a class="offset-8 col-2 btn btn-outline-primary" th:href="@{/appUserPage/myOrderList}">My Order List</a>
+    </div>
+
+
+
+
+</main>
+<th:block th:include="template :: scripts_footer"/>3
+</body>
+</html>

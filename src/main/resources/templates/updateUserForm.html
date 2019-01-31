@@ -1,0 +1,67 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:include="template :: scripts_header"/>
+    <meta charset="UTF-8">
+    <title>Customer Panel Page</title>
+</head>
+<body>
+
+
+<!--i18n-->
+<th:block th:include="template :: navigator"/>
+<th:block th:include="template :: message"/>
+
+
+<main role="main" class="container">
+    <h1 class="table-head-title">Customer Panel Page</h1>
+
+    <!--th:action : nazwa metody przypisanej do mappingu-->
+
+
+    <form th:action="@{'/appUserPage/updateUser/'+${user.getId()}}" method="post">
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input class="form-control" type="password" id="password" name="username">
+        </div>
+        <div class="form-group">
+            <label for="password">Confirm Password</label>
+            <input class="form-control" type="password" id="password-confirm" name="password">
+        </div>
+        <div class="form-group">
+            <label for="email">E-mail</label>
+            <input class="form-control" type="email" id="email" name="email">
+        </div>
+        <div class="form-group">
+            <label for="firstName">Imie</label>
+            <input class="form-control" type="text" id="firstName" name="firstName">
+        </div>
+        <div class="form-group">
+            <label for="lastName">Nazwisko</label>
+            <input class="form-control" type="text" id="lastName" name="lastName">
+        </div>
+        <div class="form-group">
+            <label for="postalCode">Kod Pocztowy</label>
+            <input class="form-control" type="text" id="postalCode" name="postalCode">
+        </div>
+        <div class="form-group">
+            <label for="city">Miasto</label>
+            <input class="form-control" type="text" id="city" name="city">
+        </div>
+        <div class="form-group">
+            <label for="address">Ulica i numer mieszkania</label>
+            <input class="form-control" type="text" id="address" name="address">
+        </div>
+        <div class="form-group">
+            <label for="phoneNumber">Numer telefonu</label>
+            <input class="form-control" type="text" id="phoneNumber" name="phoneNumber">
+        </div>
+
+        <button class="btn btn-primary" type="submit">Aktualizuj</button>
+    </form>
+</main>
+<th:block th:include="template :: scripts_footer"/>
+
+</body>
+</html>

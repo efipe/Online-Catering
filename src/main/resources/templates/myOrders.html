@@ -1,0 +1,43 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:include="template :: scripts_header"/>
+    <meta charset="UTF-8">
+    <title>Moje zamówienia</title>
+</head>
+<body>
+
+
+<!--i18n-->
+<th:block th:include="template :: navigator"/>
+<th:block th:include="template :: message"/>
+
+
+<main role="main" class="container">
+    <h1 class="table-head-title">Moje zamówienia</h1>
+    <div class="row col-md-12">
+        <div class="col-md-1">Rodzaj kateringu</div>
+        <div class="col-md-2">Kaloryczność</div>
+        <div class="col-md-2">Adres dostawy</div>
+        <div class="col-md-2">Miasto</div>
+        <div class="col-md-5">Cena</div>
+
+    <div class="row col-md-12" th:each="catering , iter : ${catering_user_list}">
+        <div class="col-md-1" th:text="${catering.getCateringType()}"></div>
+        <div class="col-md-2" th:text="${catering.getCalories()}"></div>
+        <div class="col-md-2" th:text="${catering.getDeliveryAddress()}"></div>
+        <div class="col-md-2" th:text="${catering.getDeliveryCity()}"></div>
+        <div class="col-md-5" th:text="${catering.getTotalPrice()}"></div>
+    </div>
+
+
+
+
+
+
+</main>
+<th:block th:include="template :: scripts_footer"/>
+
+</body>
+</html>
