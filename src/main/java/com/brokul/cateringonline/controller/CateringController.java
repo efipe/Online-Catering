@@ -46,7 +46,7 @@ public class CateringController {
     @PostMapping("/createOrder/{id}")
     public String createOrder(@PathVariable(name = "id") Long id, CateringDto cateringDto) {
         cateringService.createOrder(id, cateringDto);
-        return "redirect:/";
+        return "orderSummary";
     }
 
 

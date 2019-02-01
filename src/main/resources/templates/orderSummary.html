@@ -1,10 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <th:block th:include="template :: scripts_header"/>
 </head>
 <body>
+<th:block th:include="template :: navigator"/>
 
+<div class="py-5 text-center align-items-center d-flex" style="background-image: linear-gradient(to left bottom, rgba(189, 195, 199, 0.75), rgba(44, 62, 80, 0.75)); background-size: 100%;">
+    <div class="container py-5" >
+        <div class="row" style="">
+            <div class="col-md-8 mx-auto"> <i class="d-block fa fa-stop-circle mb-3 text-muted fa-5x"></i>
+                <h1 class="display-3 mb-4">Oder has been created</h1>
+                <p class="lead mb-5" style="">You can find your order on 'My Orders" page</p> <a th:href="@{/appUserPage}" class="btn btn-lg btn-primary mx-1">Return<br></a>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
+<th:block th:include="template :: scripts_footer"/>
 </html>
