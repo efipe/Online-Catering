@@ -13,6 +13,7 @@ import javax.validation.constraints.Email;
 public class UpdateAppUserDto {
 
     private String password;
+    private String passwordConfirm;
     @Email
     private String email;
 

@@ -1,37 +1,47 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <th:block th:include="template :: scripts_header"/>
-    <meta charset="UTF-8">
-    <title>Register Form</title>
+        <th:block th:include="template :: scripts_header"/>
 </head>
+
 <body>
-
-
-<!--i18n-->
 <th:block th:include="template :: navigator"/>
-<th:block th:include="template :: message"/>
+<div class="py-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 p-4">
+                <h1 style="">Catering<br></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5 p-4">
+                <h3>Registration form<br></h3>
+                <p class="lead mt-3">Contact</p>
+                <p>58 123 456 789</p>
+                <p> <a href="#">c</a>contact@contact.me</p>
+            </div>
+            <div class="col-md-7 p-4">
+                <h3 class="mb-3">Register<br></h3>
+                    <form th:action="@{/register}" method="post">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="username" placeholder="Username" required="required" id="username">
+                        </div>
 
-
-<main role="main" class="container">
-    <h1 class="table-head-title">Register Page</h1>
-    <form th:action="@{/register}" method="post">
-        <div class="form-group">
-            <label for="username">Username</label>
-            <input class="form-control" type="text" id="username" name="username">
+                    <div class="form-group">
+                        <input type="password" name="password" placeholder="Password" required="required" class="form-control" id="password" >
+                        <div class="form-group"><label>
+                            <br>
+                        </label>
+                            <input type="password" class="form-control" id="passwordConfirm" placeholder="Confirm Password" name="passwordConfirm" required="required"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </form>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input class="form-control" type="password" id="password" name="password">
-        </div>
-        <div class="form-group">
-            <label for="password-confirm">Password Confirm</label>
-            <input class="form-control" type="password" id="password-confirm" name="passwordConfirm">
-        </div>
-        <button class="btn btn-primary" type="submit">Register</button>
-    </form>
-</main>
-<th:block th:include="template :: scripts_footer"/>3
+    </div>
+</div>
 </body>
+<th:block th:include="template :: scripts_footer"/>
 </html>

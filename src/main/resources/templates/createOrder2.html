@@ -1,0 +1,55 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:include="template :: scripts_header"/>
+    <meta charset="UTF-8">
+    <title>Złóż zamówienie</title>
+</head>
+<body>
+
+
+<!--i18n-->
+<th:block th:include="template :: navigator"/>
+<th:block th:include="template :: message"/>
+
+
+<main role="main" class="container">
+    <h1 class="table-head-title">Złóż zamówienie</h1>
+
+    <!--th:action : nazwa metody przypisanej do mappingu-->
+
+
+    <form th:action="@{'/order/createOrder/'+${userId}}" method="post">
+        <input type="hidden" name="cateringType" th:value="${kalorycznosc}">
+        <input type="hidden" name="durationDays" th:value="${dniowosc}">
+
+        Adres Zamówienia ( Pozostaw puste, jeżeli ten sam co adres użytkownika)
+
+        <br>
+        <div class="form-group">
+            <label for="postalCode">Kod Pocztowy</label>
+            <input class="form-control" type="text" id="postalCode" name="deliveryPostalCode">
+        </div>
+        <div class="form-group">
+            <label for="city">Miasto</label>
+            <input class="form-control" type="text" id="city" name="deliveryCity">
+        </div>
+        <div class="form-group">
+            <label for="address">Ulica i numer mieszkania</label>
+            <input class="form-control" type="text" id="address" name="deliveryAddress">
+        </div>
+        <br><br><br>
+        <div class="form-group">
+            <label for="note">Uwagi do zamówienia</label>
+            <input class="form-control" type="text" id="note" name="note">
+        </div>
+
+
+        <button class="btn btn-primary" type="submit">Dalej</button>
+    </form>
+</main>
+<th:block th:include="template :: scripts_footer"/>
+
+</body>
+</html>

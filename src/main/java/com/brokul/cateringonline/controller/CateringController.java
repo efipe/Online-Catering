@@ -9,10 +9,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
@@ -33,6 +30,17 @@ public class CateringController {
 
         model.addAttribute("user", optionaAppuser);
         return "createOrder";
+    }
+
+    @GetMapping("/createOrder/{id}")
+    public String createOrder(Model model,
+                              @PathVariable(name = "id") Long id,
+                              @RequestParam(name = "cateringType") String cateringType,
+                              @RequestParam(name = "durationDays") String durationDays) {
+        model.addAttribute("userId", id);
+        model.addAttribute("kalorycznosc", cateringType);
+        model.addAttribute("dniowosc", durationDays);
+        return "createOrder2";
     }
 
     @PostMapping("/createOrder/{id}")

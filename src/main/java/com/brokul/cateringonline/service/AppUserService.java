@@ -43,11 +43,10 @@ public class AppUserService {
     }
 
     public boolean update(Long id, UpdateAppUserDto oldUserData) {
-        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
         Optional<AppUser> oldUserFromDb = appUserRepository.findById(id);
         if (oldUserFromDb.isPresent()) {
             AppUser updated = oldUserFromDb.get();
-            if (oldUserData.getPassword() != null) {
+            if ((!oldUserData.getPassword().isEmpty()) && (oldUserData.getPasswordConfirm().equals(oldUserData.getPassword()))) {
                 updated.setPassword(bCryptPasswordEncoder.encode(oldUserData.getPassword()));
             }
             updated.setEmail(oldUserData.getEmail());

@@ -19,6 +19,10 @@ public class IndexController {
     public String getIndex() {
         return "index";
     }
+    @GetMapping("/index.html")
+    public String getIndex2(){
+        return "index";
+    }
 
     @GetMapping("/appUserPage")
     public String getUserPanel(){
@@ -30,9 +34,6 @@ public class IndexController {
     public String getRegisterPage() {
         return "register";
     }
-
-
-
 
     @PostMapping("/register")
     public String submitRegisterForm(AppUserDto appUserDto, String passwordConfirm) {
