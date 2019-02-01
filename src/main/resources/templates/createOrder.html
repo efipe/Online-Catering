@@ -2,60 +2,80 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head>
-    <th:block th:include="template :: scripts_header"/>
-    <meta charset="UTF-8">
-    <title>Złóż zamówienie</title>
+  <th:block th:include="template :: scripts_header"/>
 </head>
 <body>
-
-
-<!--i18n-->
 <th:block th:include="template :: navigator"/>
-<th:block th:include="template :: message"/>
-
-
-<main role="main" class="container">
-    <h1 class="table-head-title">Złóż zamówienie</h1>
-
-    <!--th:action : nazwa metody przypisanej do mappingu-->
-
-
-    <form th:action="@{'/order/createOrder/'+${user.getId()}}" method="get">
-        <div>
-            <label>Typ i Kaloryczność</label><br>
-            <!--formularz prześle do pola "cateringType"-->
-            <select name="cateringType" required="true">
-                <!--wybranie tej opcji spowoduje przeslanie w formularzu "N12"-->
-                <option value="N 12">Normal 1200 kcal</option>
-                <option value="N 15">Normal 1500 kcal</option>
-                <option value="N 20">Normal 2000 kcal</option>
-                <option value="N 25">Normal 2500 kcal</option>
-                <option value="N 30">Normal 3000 kcal</option>
-                <option value="N 35">Normal 3500 kcal</option>
-                <option value="W 15">Wege 1500 kcal</option>
-                <option value="W 30">Wege 3000 kcal</option>
-                <option value="G 2">Gain X2 dziennie</option>
-                <option value="G 3">Gain X3 dziennie</option>
-                <option value="G 4">Gain X4 dziennie</option>
-                <option value="G 5">Gain X5 dziennie</option>
-                <option value="Z 1">Zdrowe obiadki</option>
-                <option value="WZ 1">Wege zdrowe obiadki</option>
-            </select><br><br>
-        </div>
-
-        <div>
-            <label>Ilość dni</label><br>
-            <select name="durationDays" required="true">
-                <option value="1">1</option>
-                <option value="5">5</option>
-                <option value="20">20</option>
-            </select><br><br>
-        </div>
-
-        <button class="btn btn-primary" type="submit">Dalej</button>
-    </form>
-</main>
+<form th:action="@{'/order/createOrder/'+${user.getId()}}" method="get">
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="display-2" style="">Create the order<br></h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h1 class="display-4">Choose type and calories</h1>
+      </div>
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <h1 class="display-4">Choose duration</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <select name="cateringType" required="true">
+          <!--wybranie tej opcji spowoduje przeslanie w formularzu "N12"-->
+          <option value="N 12">Normal 1200 kcal</option>
+          <option value="N 15">Normal 1500 kcal</option>
+          <option value="N 20">Normal 2000 kcal</option>
+          <option value="N 25">Normal 2500 kcal</option>
+          <option value="N 30">Normal 3000 kcal</option>
+          <option value="N 35">Normal 3500 kcal</option>
+          <option value="W 15">Wege 1500 kcal</option>
+          <option value="W 30">Wege 3000 kcal</option>
+          <option value="G 2">Gain X2 dziennie</option>
+          <option value="G 3">Gain X3 dziennie</option>
+          <option value="G 4">Gain X4 dziennie</option>
+          <option value="G 5">Gain X5 dziennie</option>
+          <option value="Z 1">Zdrowe obiadki</option>
+          <option value="WZ 1">Wege zdrowe obiadki</option>
+        </select>
+      </div>
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <select name="durationDays" required="true">
+          <option value="1">1 Day</option>
+          <option value="5">5 Days</option>
+          <option value="20">20 Days</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-2"></div>
+      <div class="col-md-2"></div>
+      <div class="col-md-2"></div>
+      <div class="col-md-2"></div>
+      <div class="col-md-2"><button class="btn btn-primary" type="submit">Continue</button></div>
+    </div>
+  </div>
+</div>
+</form>
+</body>
 <th:block th:include="template :: scripts_footer"/>
 
-</body>
 </html>

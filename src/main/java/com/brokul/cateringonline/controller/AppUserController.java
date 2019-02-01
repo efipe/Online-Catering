@@ -4,6 +4,7 @@ import com.brokul.cateringonline.model.AppUser;
 import com.brokul.cateringonline.model.Catering;
 import com.brokul.cateringonline.model.dto.AppUserDto;
 import com.brokul.cateringonline.model.dto.UpdateAppUserDto;
+import com.brokul.cateringonline.model.dto.UpdatePasswordDto;
 import com.brokul.cateringonline.service.AppUserService;
 import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,7 +61,23 @@ public class AppUserController {
     @PostMapping("/updateUser/{id}")
     public String update(@PathVariable(name = "id") Long id, UpdateAppUserDto appUserDto) {
         appUserService.update(id, appUserDto);
-        return "redirect:/";
+        return "redirect:/appUserPage";
+    }
+
+    @GetMapping("/changePassword")
+    public String getChangePasswordPage(Model model){
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        Optional<AppUser> appUser = appUserService.findByUsername(user.getUsername());
+        AppUser optionaAppuser = appUser.get();
+        model.addAttribute("user", optionaAppuser);
+        return "changePassword";
+
+    }
+
+    @PostMapping("/changePassword/{id}")
+    public String changePasswordSubmit(@PathVariable(name = "id") Long id, UpdatePasswordDto updatePasswordDto){
+        appUserService.updatePassword(id, updatePasswordDto);
+        return "redirect:/appUserPage";
     }
 
 

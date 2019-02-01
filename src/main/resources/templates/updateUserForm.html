@@ -4,64 +4,53 @@
 <head>
     <th:block th:include="template :: scripts_header"/>
     <meta charset="UTF-8">
-    <title>Customer Panel Page</title>
+    <title>Update user details</title>
 </head>
 <body>
-
-
-<!--i18n-->
 <th:block th:include="template :: navigator"/>
-<th:block th:include="template :: message"/>
-
-
-<main role="main" class="container">
-    <h1 class="table-head-title">Customer Panel Page</h1>
-
-    <!--th:action : nazwa metody przypisanej do mappingu-->
-
-
-    <form th:action="@{'/appUserPage/updateUser/'+${user.getId()}}" method="post">
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input class="form-control" type="password" id="password" name="password">
+<div class="py-3" >
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 p-4">
+                <h1>Update your user details</h1>
+                <p><br></p>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="password">Confirm Password</label>
-            <input class="form-control" type="password" id="passwordConfirm" name="passwordConfirm">
+        <div class="row">
+            <div class="col-md-5 p-4">
+                <h3>Catering</h3>
+                <p class="lead mt-3"> <b>Support</b> </p>
+                <p> <a href="#">+1 234 567 89</a> </p>
+                <p> <a href="#">c</a>ontact@contact.me</p>
+                <p class="lead mt-3"> <b>Sales</b> </p>
+                <p> <a href="#">+1 234 567 89</a> </p>
+                <p> <a href="#">sales@hello.com</a> </p>
+                <p class="lead mt-3"> <b>General</b> </p>
+                <p> <a href="#">info@hello.com</a> </p>
+            </div>
+            <div class="col-md-7 p-4">
+                <h3 class="mb-3">User informations<br></h3>
+                <form th:action="@{'/appUserPage/updateUser/'+${user.getId()}}" method="post">
+                    <div class="form-row">
+                        <div class="form-group col-md-6"> <input type="text" class="form-control" placeholder="First Name" id="firstName" required="required"> </div>
+                        <div class="form-group col-md-6"> <input type="text" class="form-control" placeholder="Last Name" name="lastName" id="lastName" required="required"> </div>
+                    </div>
+                    <div class="form-group"> <input type="text" class="form-control" id="form38" placeholder="Phone number" required="required"> </div>
+                    <div class="form-group"> <input type="email" class="form-control" id="email" placeholder="Email" name="email" required="required"> </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6"> <input type="text" class="form-control" id="phone" name="phoneNumber" placeholder="City" required="required"> </div>
+                        <div class="form-group col-md-6"> <input type="text" class="form-control" id="form41" placeholder="Postal Code" required="required"> </div>
+                    </div>
+                    <div class="form-group"> <input type="text" class="form-control" id="address" placeholder="Address" name="address" required="required"> </div>
+                 <button type="submit" class="btn btn-primary">Send</button>
+                </form>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="email">E-mail</label>
-            <input class="form-control" type="email" id="email" name="email">
-        </div>
-        <div class="form-group">
-            <label for="firstName">Imie</label>
-            <input class="form-control" type="text" id="firstName" name="firstName">
-        </div>
-        <div class="form-group">
-            <label for="lastName">Nazwisko</label>
-            <input class="form-control" type="text" id="lastName" name="lastName">
-        </div>
-        <div class="form-group">
-            <label for="postalCode">Kod Pocztowy</label>
-            <input class="form-control" type="text" id="postalCode" name="postalCode">
-        </div>
-        <div class="form-group">
-            <label for="city">Miasto</label>
-            <input class="form-control" type="text" id="city" name="city">
-        </div>
-        <div class="form-group">
-            <label for="address">Ulica i numer mieszkania</label>
-            <input class="form-control" type="text" id="address" name="address">
-        </div>
-        <div class="form-group">
-            <label for="phoneNumber">Numer telefonu</label>
-            <input class="form-control" type="text" id="phoneNumber" name="phoneNumber">
-        </div>
-
-        <button class="btn btn-primary" type="submit">Aktualizuj</button>
-    </form>
-</main>
-<th:block th:include="template :: scripts_footer"/>
-
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 </body>
+<th:block th:include="template :: scripts_footer"/>
 </html>

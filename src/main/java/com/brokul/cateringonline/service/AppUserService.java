@@ -3,6 +3,7 @@ package com.brokul.cateringonline.service;
 import com.brokul.cateringonline.model.AppUser;
 import com.brokul.cateringonline.model.dto.AppUserDto;
 import com.brokul.cateringonline.model.dto.UpdateAppUserDto;
+import com.brokul.cateringonline.model.dto.UpdatePasswordDto;
 import com.brokul.cateringonline.repository.AppUserRepository;
 import com.brokul.cateringonline.repository.CateringRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,15 +31,15 @@ public class AppUserService {
     public boolean register(String username, String password) {
         AppUser appUser = new AppUser();
         appUser.setUsername(username);
-            appUser.setPassword(bCryptPasswordEncoder.encode(password));
-            appUser.getRoles().add(userRoleService.getUserRole());
-            appUser.setRoles(new HashSet<>(Arrays.asList(userRoleService.getUserRole())));
+        appUser.setPassword(bCryptPasswordEncoder.encode(password));
+        appUser.getRoles().add(userRoleService.getUserRole());
+        appUser.setRoles(new HashSet<>(Arrays.asList(userRoleService.getUserRole())));
 
-            try {
-                appUserRepository.saveAndFlush(appUser);
-            } catch (ConstraintViolationException cve) {
-                return false;
-            }
+        try {
+            appUserRepository.saveAndFlush(appUser);
+        } catch (ConstraintViolationException cve) {
+            return false;
+        }
         return true;
     }
 
@@ -46,9 +47,9 @@ public class AppUserService {
         Optional<AppUser> oldUserFromDb = appUserRepository.findById(id);
         if (oldUserFromDb.isPresent()) {
             AppUser updated = oldUserFromDb.get();
-            if ((!oldUserData.getPassword().isEmpty()) && (oldUserData.getPasswordConfirm().equals(oldUserData.getPassword()))) {
-                updated.setPassword(bCryptPasswordEncoder.encode(oldUserData.getPassword()));
-            }
+//            if ((!oldUserData.getPassword().isEmpty()) && (oldUserData.getPasswordConfirm().equals(oldUserData.getPassword()))) {
+//                updated.setPassword(bCryptPasswordEncoder.encode(oldUserData.getPassword()));
+//            }
             updated.setEmail(oldUserData.getEmail());
             updated.setFirstName(oldUserData.getFirstName());
             updated.setLastName(oldUserData.getLastName());
@@ -68,6 +69,20 @@ public class AppUserService {
 
     public Optional<AppUser> findByUsername(String username) {
         return appUserRepository.findByUsername(username);
+    }
+
+    public boolean updatePassword(Long id, UpdatePasswordDto updatePasswordDto) {
+        Optional<AppUser> optionalAppUser = appUserRepository.findById(id);
+        if (optionalAppUser.isPresent()) {
+            AppUser appUser = optionalAppUser.get();
+            if (updatePasswordDto.getPassword().equals(updatePasswordDto.getPasswordConfirm())) {
+                appUser.setPassword(bCryptPasswordEncoder.encode(updatePasswordDto.getPassword()));
+                appUserRepository.save(appUser);
+                return true;
+            }
+            return false;
+        }
+        return false;
     }
 }
 

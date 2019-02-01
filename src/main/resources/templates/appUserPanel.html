@@ -3,8 +3,6 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <th:block th:include="template :: scripts_header"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="/static.css/Untitled.css">
     <meta charset="UTF-8">
     <title>Customer Panel Page</title>
 </head>
@@ -38,7 +36,7 @@
                 <div class="card border-0">
                     <div class="card-body p-4" style=""> <i class="d-block fa fa-stop-circle-o mb-2 text-muted fa-4x"></i>
                         <h2 class="mt-3"> <b>Change Password</b><br></h2>
-                        <a class="btn mt-3 btn-primary" href="#" >Click<br></a>
+                        <a class="btn mt-3 btn-primary" th:href="@{/appUserPage/changePassword}" >Click<br></a>
                     </div>
                 </div>
             </div>
