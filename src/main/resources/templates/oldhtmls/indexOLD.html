@@ -1,17 +1,284 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
-<head>
-    <th:block th:include="template :: scripts_header"/>
-    <meta charset="UTF-8">
-    <title>Index</title>
-</head>
-<body>
+      xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.springframework.org/security/tags">
 
+<html>
+<head>
+
+    <th:block th:include="template :: scripts_header"/>
+</head>
+
+<body>
 <th:block th:include="template :: navigator"/>
-<main role="main" class="container">
-    <h2>Catering ordering system</h2>
-</main>
-<th:block th:include="template :: scripts_footer"/>
+<!--url('https://static.pingendo.com/cover-bubble-dark.svg')-->
+<div class="py-5 text-center" style="background-image: url('https://img.grouponcdn.com/deal/2hXXgxsqQigtub3rsibg31j6dGzN/2h-2000x1200/v1/c700x420.jpg');background-size:cover;">
+    <div class="container">
+        <div class="row">
+            <div class="bg-white p-5 mx-auto col-md-8 col-10">
+                <h3 class="display-3">Welcome</h3>
+                <p class="mb-3 lead">Catering Service</p>
+                <p class="mb-4"></p> <a class="btn btn-outline-primary" href="#">Read more</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="py-5 text-center" >
+    <div class="container">
+        <div class="row">
+            <div class="mx-auto col-md-8">
+                <h1 class="mb-3">I lie close to the earth, a thousand unknown plants are noticed by me.</h1>
+                <p class="lead">When, while the lovely valley teems with vapour around me. </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="py-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 my-3 px-4">
+                <p class="mb-0">I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now. When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees.</p>
+            </div>
+            <div class="col-md-6 border-left my-3 px-4">
+                <p class="mb-0">But a few stray gleams steal into the inner sanctuary, I throw myself down among the tall grass by the trickling stream; and, as I lie close to the earth, a thousand unknown plants are noticed by me: when I hear the buzz of the little world among the stalks, and grow familiar with the countless indescribable forms of the insects and flies, then I feel the presence of the Almighty, who formed us in his own image.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="py-3 text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1>A thousand unknown plants</h1>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-3 col-6 p-4"> <i class="d-block fa fa-circle fa-3x mb-2 text-muted"></i>
+                <h4> <b>One</b> </h4>
+                <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy.</p>
+            </div>
+            <div class="col-lg-3 col-6 p-4"> <i class="d-block fa fa-stop-circle-o fa-3x mb-2 text-muted"></i>
+                <h4> <b>Two</b> </h4>
+                <p>I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.</p>
+            </div>
+            <div class="col-lg-3 col-6 p-4"> <i class="d-block fa fa-stop-circle fa-3x mb-2 text-muted"></i>
+                <h4> <b>Three</b> </h4>
+                <p>I feel that I never was a greater artist than now. When, while the lovely valley teems with vapour around me.</p>
+            </div>
+            <div class="col-lg-3 col-6 p-4"> <i class="d-block fa fa-circle-o fa-3x mb-2 text-muted"></i>
+                <h4> <b>Four</b> </h4>
+                <p>Oh, would I could describe these conceptions, could impress upon paper all that is living so full.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6 col-md-3 p-0"> <img class="img-fluid d-block" src="https://img.grouponcdn.com/deal/rEXp8Xxny7kC71uVjSqY7T5zyDd/rE-940x564/v1/c700x420.jpg"> </div>
+            <div class="col-6 col-md-3 p-0"> <img class="img-fluid d-block" src="https://thumbs.img-sprzedajemy.pl/1000x901c/21/a3/a4/sprzedam-catering-dietetyczny-dobrze-znana-marka-491021650.jpg"> </div>
+            <div class="col-6 col-md-3 p-0"> <img class="img-fluid d-block" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLoWYKBN8TcVfVK3yD-HyFTN8DJVE-4qute19EJ37AbSeZx3oV"> </div>
+            <!--https://static.pingendo.com/cover-bubble-light.svg"-->
+            <div class="col-6 col-md-3 p-0"> <img class="img-fluid d-block" src="https://img.grouponcdn.com/deal/3jSYxfN2vpg7V7zpm5n4NUmAdMJP/3j-1500x900/v1/c700x420.jpg"> </div>
+            <div class="col-6 col-md-3 p-0"> <img class="img-fluid d-block" src="https://cdn.katalogsmakow.pl/2017/05/23/0x600/catering-dietetyczny-jak-dobrac-kalorycznosc-zamawiajac-diete.599418.jpg"> </div>
+            <div class="col-6 col-md-3 p-0"> <img class="img-fluid d-block" src="https://www.pkt.pl/articles/1/g/3/f-18910-wiele-mozliwosci-i-zalet-cateringu-dietetycznego.jpg"> </div>
+            <div class="col-6 col-md-3 p-0"> <img class="img-fluid d-block" src="https://thumbs.img-sprzedajemy.pl/1000x901c/ad/3f/43/dieta-bezglutenowa-catering-dietetyczny-503561463.jpg"> </div>
+            <div class="col-6 col-md-3 p-0"> <img class="img-fluid d-block" src="https://polki.pl/foto/1_X_LARGE/polki-pl-przetestowaly-catering-dietetyczny-dietbox-205693.jpg"> </div>
+        </div>
+    </div>
+</div>
+<div class="py-5 text-center">
+    <div class="container">
+        <div class="row">
+            <div class="mx-auto col-md-8">
+                <h1 class="mb-3">I lie close to the earth, a thousand unknown plants are noticed by me.</h1>
+                <p class="lead">When, while the lovely valley teems with vapour around me. </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="py-3">
+    <div class="container">
+        <div class="row">
+            <div class="p-0 col-lg-5 order-2 order-lg-1"> <img class="img-fluid d-block" src="https://static.pingendo.com/cover-bubble-light.svg"> </div>
+            <div class="d-flex flex-column justify-content-center p-3 col-lg-7 order-1 order-lg-2">
+                <p class="lead mb-0">I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now. When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray gleams steal into the inner sanctuary.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="py-3">
+    <div class="container">
+        <div class="row my-4 d-flex justify-content-center">
+            <div class="d-flex flex-column justify-content-center p-3 col-lg-7">
+                <p class="lead mb-0">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment.</p>
+            </div>
+            <div class="p-0 col-lg-3"> <img class="img-fluid d-block" src="https://static.pingendo.com/img-placeholder-2.svg"> </div>
+        </div>
+        <div class="row my-4 d-flex justify-content-center">
+            <div class="p-0 order-2 order-lg-1 col-lg-3"> <img class="img-fluid d-block" src="https://static.pingendo.com/img-placeholder-4.svg"> </div>
+            <div class="d-flex flex-column justify-content-center p-3 col-lg-7 order-1 order-lg-2">
+                <p class="lead mb-0">Yet I feel that I never was a greater artist than now. When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray gleams steal into the inner sanctuary, I throw myself down among the tall grass by the trickling stream; and, as I lie close to the earth, a thousand unknown plants are noticed by me: when I hear the buzz of the little world among the stalks, and grow familiar with the countless indescribable forms of the insects and flies.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="py-1">
+    <div class="container">
+        <div class="row">
+            <div class="d-flex flex-column justify-content-center p-3 col-lg-7">
+                <p class="lead mb-0">I throw myself down among the tall grass by the trickling stream; and, as I lie close to the earth, a thousand unknown plants are noticed by me: when I hear the buzz of the little world among the stalks, and grow familiar with the countless indescribable forms of the insects and flies, then I feel the presence of the Almighty, who formed us in his own image, and the breath of that universal love.</p>
+            </div>
+            <div class="p-0 col-lg-5"> <img class="img-fluid d-block" src="https://static.pingendo.com/cover-bubble-dark.svg"> </div>
+        </div>
+    </div>
+</div>
+<div class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table text-center">
+                    <thead>
+                    <tr>
+                        <th>&nbsp;</th>
+                        <th class="text-center">
+                            <h3> Standard </h3>
+                            <h2> <b>15$</b> </h2> <a class="btn btn-link" href="#">Start now</a>
+                        </th>
+                        <th class="text-center">
+                            <h3> Pro </h3>
+                            <h2> <b>49$</b> </h2> <a class="btn btn-primary" href="#">Start now</a>
+                        </th>
+                        <th class="text-center">
+                            <h3> Ultimate </h3>
+                            <h2> <b>99$</b> </h2> <a class="btn btn-link" href="#">Contact us</a>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>Small business and startups</td>
+                        <td>Growing activities</td>
+                        <td>Big firms and companies</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>One</td>
+                        <td> <i class="fa fa-check fa-lg text-muted"></i> </td>
+                        <td> <i class="fa fa-check fa-lg text-muted"></i> </td>
+                        <td> <i class="fa fa-check fa-lg text-muted"></i> </td>
+                    </tr>
+                    <tr>
+                        <td>Two</td>
+                        <td> <i class="fa fa-check fa-lg text-muted"></i> </td>
+                        <td> <i class="fa fa-check fa-lg text-muted"></i> </td>
+                        <td> <i class="fa fa-check fa-lg text-muted"></i> </td>
+                    </tr>
+                    <tr>
+                        <td>Three</td>
+                        <td></td>
+                        <td> <i class="fa fa-check fa-lg text-muted"></i> </td>
+                        <td> <i class="fa fa-check fa-lg text-muted"></i> </td>
+                    </tr>
+                    <tr>
+                        <td>Four</td>
+                        <td></td>
+                        <td> <i class="fa fa-check fa-lg text-muted"></i> </td>
+                        <td> <i class="fa fa-check fa-lg text-muted"></i> </td>
+                    </tr>
+                    <tr>
+                        <td>Five</td>
+                        <td></td>
+                        <td></td>
+                        <td> <i class="fa fa-check fa-lg text-muted"></i> </td>
+                    </tr>
+                    <tr>
+                        <td>Six</td>
+                        <td></td>
+                        <td></td>
+                        <td> <i class="fa fa-check fa-lg text-muted"></i> </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="py-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 p-4">
+                <h4 class="text-center"> <b class="text-center">W jaki sposób można zawiesić dietę?</b></h4>
+                <p class="text-center">Dietę można zawiesić z minimum 3 dniowym wyprzedzeniem, tj w poniedziałek dietę na czwartek, we wtorek dietę na piątek, w środę do piątku dietę na poniedziałek i wtorek, zaś w niedzielę dietę na środę. </p>
+            </div>
+            <div class="col-lg-3 col-md-6 p-4">
+                <h4> <b>#2</b> </h4>
+                <p>I am alone, and feel the charm of existence in this spot, which was created for the bliss.</p>
+            </div>
+            <div class="col-lg-3 col-md-6 p-4">
+                <h4> <b>#3</b> </h4>
+                <p>So absorbed in the exquisite sense of mere tranquil existence.</p>
+            </div>
+            <div class="col-lg-3 col-md-6 p-4">
+                <h4> <b>#4</b> </h4>
+                <p>At the present moment and yet I feel that I never was a greater artist than now.</p>
+            </div>
+            <div class="col-lg-3 col-md-6 p-4">
+                <h4> <b>#5</b> </h4>
+                <p>And the meridian sun strikes the upper surface of the impenetrable foliage.</p>
+            </div>
+            <div class="col-lg-3 col-md-6 p-4">
+                <h4> <b>#6</b> </h4>
+                <p>I throw myself down among the tall grass by the trickling stream.</p>
+            </div>
+            <div class="col-lg-3 col-md-6 p-4">
+                <h4> <b>#7</b> </h4>
+                <p>And, as I lie close to the earth, a thousand unknown plants are noticed by me.</p>
+            </div>
+            <div class="col-lg-3 col-md-6 p-4">
+                <h4> <b>#8</b> </h4>
+                <p>When I hear the buzz of the little world among the stalks, and grow familiar.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="py-5 text-white bg-dark" style="background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)); background-position: center center, center center; background-size: cover, cover; background-repeat: repeat, repeat;">
+    <div class="container">
+        <div class="row">
+            <div class="p-3 col-md-8 col-lg-6 ml-auto text-right text-white">
+                <p class="lead" style="">"I throw myself down among the tall grass by the trickling stream; and, as I lie close to the earth, a thousand unknown plants are noticed by me: when I hear the buzz of the little world among the stalks."</p>
+                <p><b>Johann Goethe</b><br><small>CEO and founder</small></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row" style="">
+                    <div class="mx-auto col-md-4">
+                        <p class="mb-3 lead text-center">Follow us</p>
+                        <div class="row">
+                            <div class="col-md-12 d-flex align-items-center justify-content-between"> <a href="#">
+                                <i class="d-block fa fa-twitter text-muted fa-2x"></i>
+                            </a> <a href="#">
+                                <i class="d-block fa fa-google-plus-official text-muted fa-2x"></i>
+                            </a> <a href="#">
+                                <i class="d-block fa fa-instagram text-muted fa-2x"></i>
+                            </a> <a href="#">
+                                <i class="d-block fa fa-pinterest-p text-muted fa-2x"></i>
+                            </a> <a href="#">
+                                <i class="d-block fa fa-reddit text-muted fa-2x"></i>
+                            </a> <a href="#">
+                                <i class="d-block fa fa-facebook-official text-muted fa-2x"></i>
+                            </a> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 </body>
+    <th:block th:include="template :: scripts_footer"/>
+
+
 </html>

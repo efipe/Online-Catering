@@ -12,18 +12,19 @@
 <main role="main" class="container">
     <h1 class="table-head-title">My Orders</h1>
     <div class="row col-md-12">
-        <div class="col-md-1">Rodzaj kateringu</div>
-        <div class="col-md-2">Kaloryczność</div>
-        <div class="col-md-2">Adres dostawy</div>
-        <div class="col-md-2">Miasto</div>
-        <div class="col-md-5">Cena</div>
+        <div class="col-md-2">Type and calories</div>
+        <div class="col-md-2">Delivery</div>
+        <div class="col-md-1">City</div>
+        <div class="col-md-1">Price</div>
+        <div class="col-md-1">Note</div>
+
 
         <div class="row col-md-12" th:each="catering , iter : ${catering_user_list}">
-            <div class="col-md-1" th:text="${catering.getCateringType()}"></div>
-            <div class="col-md-2" th:text="${catering.getCalories()}"></div>
+            <div class="col-md-4" th:text="${catering.getCateringType()+catering.getCalories()} "></div>
+            <div class="col-md-3" th:text="${catering.getCalories()}"></div>
             <div class="col-md-2" th:text="${catering.getDeliveryAddress()}"></div>
             <div class="col-md-2" th:text="${catering.getDeliveryCity()}"></div>
-            <div class="col-md-5" th:text="${catering.getTotalPrice()}"></div>
+            <div class="col-md-1" th:text="${catering.getTotalPrice()}"></div>
         </div>
 
     </div>

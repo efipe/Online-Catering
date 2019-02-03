@@ -7,7 +7,7 @@
 <body>
 <th:block th:include="template :: navigator"/>
 
-<div class="py-5" style="background-image: url('https://static.pingendo.com/cover-stripes.svg'); background-position:left center; background-size: cover;">
+<div class="py-5 h-100" style="background-image: url('https://static.pingendo.com/cover-stripes.svg'); background-position:left center; background-size: cover;">
     <div class="container">
         <div class="row">
             <div class="p-5 col-lg-6">
@@ -16,7 +16,7 @@
                 <form th:method="login" method="post">
                     <div class="form-group"> <input type="text" class="form-control" placeholder="User name" name="username" required="required" id="username"> </div>
                     <div class="form-group"> <input type="password" class="form-control" placeholder="Password" id="password" name="password"> <small class="form-text text-muted text-right">
-                        <a href="#"> Forgot your password?</a>
+                        <a th:href="@{/register}"> Need an account?</a>
                     </small> </div> <button type="submit" class="btn btn-primary">Login<br></button>
                 </form>
             </div>
