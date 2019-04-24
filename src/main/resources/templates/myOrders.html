@@ -1,0 +1,53 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:include="template :: scripts_header"/>
+    <meta charset="UTF-8">
+    <title>My Orders</title>
+</head>
+<body>
+
+<th:block th:include="template :: navigator"/>
+<div class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="display-4" contenteditable="true">My orders list</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="py-5" style="">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-striped table-borderless">
+                        <thead>
+                        <tr>
+                            <th scope="col">Catering Type and Calories</th>
+                            <th scope="col">Delivery Address</th>
+                            <th scope="col">City</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">User Comment</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="catering, iter : ${catering_user_list}">
+                            <th scope="row" th:text="${catering.getCateringType()+ ' ' +catering.getCalories()}"></th>
+                            <td th:text="${catering.getDeliveryAddress()}"></td>
+                            <td th:text="${catering.getDeliveryCity()}"></td>
+                            <td th:text="${catering.getTotalPrice()}"></td>
+                            <td th:text="${catering.getNote()}"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<th:block th:include="template :: scripts_footer"/>
+</html>
